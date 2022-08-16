@@ -1,0 +1,15 @@
+ports:
+  - port: 5000
+    onOpen: open-preview
+
+tasks:
+  - before: |
+      export FLASK_APP=helloSubdomain
+      export FLASK_DEBUG=true
+    init: |
+      pip install Flask
+    command: |
+      flask run
+vscode:
+  extensions:
+    - ms-python.python
